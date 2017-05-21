@@ -11,7 +11,7 @@ import java.util.List;
 public class TwitchChatBot extends PircBot {
     private static final Logger LOG = LoggerFactory.getLogger(TwitchChatBot.class);
 
-    private static final String TWITCH_IRC_HOST = "irc.twitch.tv";
+    private static final String TWITCH_IRC_HOST = "irc.chat.twitch.tv";
     private static final int TWITCH_IRC_PORT = 6667;
 
     private List<Observer> observers = new ArrayList<>();
@@ -22,7 +22,6 @@ public class TwitchChatBot extends PircBot {
 
     @Override
     public void onMessage(String channel, String sender, String login, String hostname, String message) {
-        System.out.println("Message received!");
         notifyObservers(message);
     }
 
